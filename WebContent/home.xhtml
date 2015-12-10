@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>home</title>
+</h:head>
+<h:body>
+
+	<h1>KM Projects</h1>
+	<h:form >
+	 
+ 		<h:outputLabel id="errorLabel" style="color:red;" value="#{openUrl.error} " />
+ 				
+ 		<h2>Environment:</h2>
+   			<h:selectOneRadio required="true" value="#{openUrl.envtype}">
+   			<f:selectItem itemValue="1" itemLabel="Prod" />
+   			<f:selectItem itemValue="2" itemLabel="QA" />
+   			</h:selectOneRadio>
+   		<br/>
+    	<h2>Project:</h2>
+			<h:selectOneRadio required="true" value="#{openUrl.projtype}">
+   			<f:selectItem itemValue="1" itemLabel="Store" />
+   			<f:selectItem itemValue="2" itemLabel="NHLBI" />
+   			<f:selectItem itemValue="3" itemLabel="NINDS" />
+   			<f:selectItem itemValue="4" itemLabel="NIMH" />
+   			<f:selectItem itemValue="5" itemLabel="Pinnacle" />
+   			<f:selectItem itemValue="6" itemLabel="All" />
+   			</h:selectOneRadio>
+   		<br/><br/>
+   	   	<h:commandButton value="OPEN URL" action="#{openUrl.choiceUrl}" />
+   	
+
+	</h:form>
+
+</h:body>
+</html>
